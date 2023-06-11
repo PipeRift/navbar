@@ -53,10 +53,13 @@ function setupNavBar() {
         }
     });
 
+
+    // Mark 
     if (location.pathname != null) {
         var menuItems = document.querySelectorAll('.nav-global nav>ul>li>a');
         for (var i = 0, len = menuItems.length; i < len; i++) {
-            if (location.pathname.indexOf(menuItems[i].getAttribute("href")) !== -1) {
+            var linkUrl = menuItems[i].getAttribute("href");
+            if (location.href.indexOf(linkUrl) !== -1) {
                 menuItems[i].className += "is-active";
             }
         }
