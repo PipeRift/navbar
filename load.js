@@ -1,3 +1,19 @@
+function setInnerHTML(elm, html) {
+    elm.innerHTML = html;
+    Array.from(elm.querySelectorAll("script"))
+        .forEach(oldScriptEl => {
+            const newScriptEl = document.createElement("script");
+
+            Array.from(oldScriptEl.attributes).forEach(attr => {
+                newScriptEl.setAttribute(attr.name, attr.value)
+            });
+
+            const scriptText = document.createTextNode(oldScriptEl.innerHTML);
+            newScriptEl.appendChild(scriptText);
+
+            oldScriptEl.parentNode.replaceChild(newScriptEl, oldScriptEl);
+        });
+}
 
 function setupNavBar() {
     const dropdownToggles = document.getElementsByClassName("js-dropdown-toggle");
@@ -69,7 +85,8 @@ fetch('./navbar/index.html')
         return response.text();
     })
     .then(function (html) {
-        var node = document.getElementById('navbar-loader').parentNode;
+        var node = document.getElementById('piperift-navbar').parentNode;
+        //setInnerHTML(node, html);
         node.innerHTML = html;
         setupNavBar()
     })
