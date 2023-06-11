@@ -21,7 +21,7 @@ function setupNavBar() {
     const isVisibleClass = 'is-visible';
 
     /* Hide all dropdowns. */
-    function sropdownHideAll() {
+    function dropdownHideAll() {
         const dropdownMenus = document.getElementsByClassName("js-dropdown-menu");
 
         if (dropdownMenus) {
@@ -46,7 +46,7 @@ function setupNavBar() {
             if (el) {
                 /* If the button is already active, remove styling. */
                 if (el.classList.contains(isVisibleClass)) {
-                    sropdownHideAll();
+                    dropdownHideAll();
                 } else {
                     /* Style button as active and show menu. */
                     this.classList.add(btnActiveClass);
