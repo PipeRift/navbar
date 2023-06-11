@@ -85,7 +85,7 @@ fetch('https://piperift.com/navbar/index.html')
         return response.text();
     })
     .then(function (html) {
-        var container = document.getElementById('piperift-navbar').parentNode;
+        var container = document.getElementById('piperift-navbar');
         //setInnerHTML(node, html);
         var injectedNode = document.createElement('div');
         injectedNode.innerHTML = html;
