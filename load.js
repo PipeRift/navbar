@@ -80,7 +80,7 @@ function setupNavBar() {
     }
 }
 
-fetch('./navbar/index.html')
+fetch('./index.html')
     .then(function (response) {
         return response.text();
     })
