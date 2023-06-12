@@ -15,8 +15,8 @@
         --nav-global-color-text-hover: white;
         --nav-global-color-text-active: white;
 
-        --nav-global-color-primary: hsl(80, 98%, 54%);
-        --nav-global-color-primary-bg: hsla(80, 100%, 46%, .1);
+        --nav-global-color-primary: hsl(80, 98%, 48%);
+        --nav-global-color-primary-bg: hsla(80, 100%, 42%, .1);
 
         --nav-global-color-button-bg-hover: hsl(213, 10%, 24%);
         --nav-global-color-button-text: var(--nav-global-color-text);
@@ -317,14 +317,17 @@
         height: 100%;
     }
 
-    .nav-global .nav-global-apps-menu ul>li>a:hover {
+    .nav-global .nav-global-apps-menu ul>li>a:hover,
+    .nav-global .nav-global-apps-menu ul>li>a.is-active {
         background-color: rgba(255, 255, 255, .05);
         color: var(--nav-global-color-text-active);
         box-shadow: var(--nav-global-box-shadow-menu-item);
     }
 
     .nav-global .nav-global-apps-menu ul>li>a:hover h4,
-    .nav-global .nav-global-apps-menu ul>li>a:hover svg {
+    .nav-global .nav-global-apps-menu ul>li>a:hover svg,
+    .nav-global .nav-global-apps-menu ul>li>a.is-active h4,
+    .nav-global .nav-global-apps-menu ul>li>a.is-active svg {
         color: var(--nav-global-color-primary);
         fill: var(--nav-global-color-primary);
     }

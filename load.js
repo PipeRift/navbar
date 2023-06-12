@@ -54,13 +54,15 @@ function setupNavBar() {
     });
 
 
-    // Mark 
+    // Mark items as active
     if (location.pathname != null) {
-        var menuItems = document.querySelectorAll('.nav-global nav>ul>li>a');
-        for (var i = 0, len = menuItems.length; i < len; i++) {
-            var linkUrl = menuItems[i].getAttribute("href");
+        var items = [];
+        items.push(...document.querySelectorAll('.nav-global nav>ul>li>a'));
+        items.push(...document.querySelectorAll('.nav-global .nav-global-apps-menu ul>li>a'));
+        for (var i = 0, len = items.length; i < len; i++) {
+            var linkUrl = items[i].getAttribute("href");
             if (location.href.indexOf(linkUrl) !== -1) {
-                menuItems[i].className += "is-active";
+                items[i].className += "is-active";
             }
         }
     }
@@ -73,7 +75,7 @@ fetch('https://piperift.com/navbar/index.html')
     .then(function (html) {
         var container = document.getElementById('piperift-navbar');
         container.innerHTML = html;
-        setupNavBar()
+        setupNavBar();
     })
     .catch(function (err) {
         console.log('Failed to fetch page: ', err);
