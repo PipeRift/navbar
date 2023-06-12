@@ -102,7 +102,7 @@
     }
 
     /* Navigation. */
-    .nav-global nav {
+    .nav-global .nav-global-container {
         align-items: center;
         display: flex;
         line-height: var(--nav-global-font-size);
@@ -126,15 +126,15 @@
     }
 
     /* Navigation items. */
-    .nav-global nav>ul {
+    .nav-global .nav-global-container>ul {
         list-style: none;
         margin: 0;
         padding: 0;
     }
 
-    .nav-global nav>ul,
-    .nav-global nav>ul>li,
-    .nav-global nav>ul>li>a,
+    .nav-global .nav-global-container>ul,
+    .nav-global .nav-global-container>ul>li,
+    .nav-global .nav-global-container>ul>li>a,
     .nav-global-apps-dropdown-container {
         align-items: center;
         display: inline-flex;
@@ -145,13 +145,13 @@
         position: relative;
     }
 
-    .nav-global nav>ul>li>a {
+    .nav-global .nav-global-container>ul>li>a {
         padding: var(--nav-global-link-padding-y) var(--nav-global-link-padding-x);
     }
 
-    .nav-global nav>a.is-active,
-    .nav-global nav>a.is-active svg,
-    .nav-global nav>ul>li>a.is-active,
+    .nav-global .nav-global-container>a.is-active,
+    .nav-global .nav-global-container>a.is-active svg,
+    .nav-global .nav-global-container>ul>li>a.is-active,
     .nav-global .nav-global-link-active,
     .nav-global .nav-global-link-active svg {
         color: var(--nav-global-color-text-active) !important;
@@ -160,7 +160,7 @@
         font-weight: 500;
     }
 
-    .nav-global .nav-global-links-right {
+    .nav-global .nav-global-container>.nav-global-links-right {
         margin-left: auto;
     }
 
@@ -449,7 +449,7 @@
             z-index: -1;
         }
 
-        .nav-global nav>ul {
+        .nav-global .nav-global-container>ul {
             height: initial;
         }
 
@@ -470,7 +470,7 @@
 </style>
 
 <style>
-    /* Custom styling for code.blender.org */
+    /* Custom styling for code.piperift.com */
     /* Make sure to start every line with ".nav-global"
      * so changes affect the developer navbar only. */
 
@@ -488,178 +488,173 @@
 
 <div class="nav-global">
     <div class="nav-global-container">
-        <nav>
-            <a href="https://piperift.com/" class="nav-global-logo">
-                <svg viewBox="8 8 112 112">
-                    <path
-                        d="M64 9C94.3757 9 119 33.6243 119 64C119 94.3757 94.3757 119 64 119C33.6243 119 9 94.3757 9 64C9 33.6243 33.6243 9 64 9ZM68.5833 19.0794C43.9545 19.0794 23.865 38.1205 22.7969 61.9989C22.7475 63.1024 21.8568 64 20.7522 64C19.2202 64 17.6882 64 16.1562 64C15.0517 64 14.1514 64.8975 14.2025 66.0009C15.3023 89.7515 35.8712 108.686 60.1199 108.686C84.3684 108.686 104.148 89.7501 105.206 65.9998C105.255 64.8962 106.146 63.9986 107.25 63.9988L111.843 63.9996C112.948 63.9998 113.848 63.1022 113.8 61.9986C112.761 38.1203 93.212 19.0794 68.5833 19.0794Z" />
-                    <path
-                        d="M70.875 33.75C86.6666 33.75 100.011 46.2256 101.059 61.9997C101.132 63.1018 100.23 64 99.125 64L88.6875 64C87.5829 64 86.6967 63.1015 86.6006 62.0011C85.5886 50.4074 75.8564 41.3125 64 41.3125C51.5853 41.3125 41.4995 51.284 41.3151 63.6549C41.3122 63.8447 41.1586 64 40.9688 64C40.7789 64 40.6248 63.8445 40.627 63.6547C40.8155 47.1072 54.535 33.75 70.875 33.75Z" />
-                    <path
-                        d="M57.1238 94.25C41.3325 94.25 27.9887 81.7744 26.9406 66.0003C26.8673 64.8982 27.7697 64 28.8743 64L39.3116 64C40.4161 64 41.3023 64.8985 41.3984 65.9989C42.4104 77.5926 52.1425 86.6875 63.9987 86.6875C76.4132 86.6875 86.4987 76.716 86.6832 64.3451C86.6861 64.1553 86.8397 64 87.0295 64C87.2194 64 87.3735 64.1555 87.3713 64.3453C87.1828 80.8928 73.4635 94.25 57.1238 94.25Z" />
-                    <strong>Piperift</strong>
-                </svg>
-            </a>
-
-            <button class="nav-global-logo js-dropdown-toggle" data-toggle-menu-id="nav-global-nav-links">
-                <svg fill-rule="nonzero" viewBox="8 8 112 112">
-                    <path
-                        d="M64 9C94.3757 9 119 33.6243 119 64C119 94.3757 94.3757 119 64 119C33.6243 119 9 94.3757 9 64C9 33.6243 33.6243 9 64 9ZM68.5833 19.0794C43.9545 19.0794 23.865 38.1205 22.7969 61.9989C22.7475 63.1024 21.8568 64 20.7522 64C19.2202 64 17.6882 64 16.1562 64C15.0517 64 14.1514 64.8975 14.2025 66.0009C15.3023 89.7515 35.8712 108.686 60.1199 108.686C84.3684 108.686 104.148 89.7501 105.206 65.9998C105.255 64.8962 106.146 63.9986 107.25 63.9988L111.843 63.9996C112.948 63.9998 113.848 63.1022 113.8 61.9986C112.761 38.1203 93.212 19.0794 68.5833 19.0794Z" />
-                    <path
-                        d="M70.875 33.75C86.6666 33.75 100.011 46.2256 101.059 61.9997C101.132 63.1018 100.23 64 99.125 64L88.6875 64C87.5829 64 86.6967 63.1015 86.6006 62.0011C85.5886 50.4074 75.8564 41.3125 64 41.3125C51.5853 41.3125 41.4995 51.284 41.3151 63.6549C41.3122 63.8447 41.1586 64 40.9688 64C40.7789 64 40.6248 63.8445 40.627 63.6547C40.8155 47.1072 54.535 33.75 70.875 33.75Z" />
-                    <path
-                        d="M57.1238 94.25C41.3325 94.25 27.9887 81.7744 26.9406 66.0003C26.8673 64.8982 27.7697 64 28.8743 64L39.3116 64C40.4161 64 41.3023 64.8985 41.3984 65.9989C42.4104 77.5926 52.1425 86.6875 63.9987 86.6875C76.4132 86.6875 86.4987 76.716 86.6832 64.3451C86.6861 64.1553 86.8397 64 87.0295 64C87.2194 64 87.3735 64.1555 87.3713 64.3453C87.1828 80.8928 73.4635 94.25 57.1238 94.25Z" />
-                </svg>
+        <a href="https://piperift.com/" class="nav-global-logo">
+            <svg viewBox="8 8 112 112">
+                <path
+                    d="M64 9C94.3757 9 119 33.6243 119 64C119 94.3757 94.3757 119 64 119C33.6243 119 9 94.3757 9 64C9 33.6243 33.6243 9 64 9ZM68.5833 19.0794C43.9545 19.0794 23.865 38.1205 22.7969 61.9989C22.7475 63.1024 21.8568 64 20.7522 64C19.2202 64 17.6882 64 16.1562 64C15.0517 64 14.1514 64.8975 14.2025 66.0009C15.3023 89.7515 35.8712 108.686 60.1199 108.686C84.3684 108.686 104.148 89.7501 105.206 65.9998C105.255 64.8962 106.146 63.9986 107.25 63.9988L111.843 63.9996C112.948 63.9998 113.848 63.1022 113.8 61.9986C112.761 38.1203 93.212 19.0794 68.5833 19.0794Z" />
+                <path
+                    d="M70.875 33.75C86.6666 33.75 100.011 46.2256 101.059 61.9997C101.132 63.1018 100.23 64 99.125 64L88.6875 64C87.5829 64 86.6967 63.1015 86.6006 62.0011C85.5886 50.4074 75.8564 41.3125 64 41.3125C51.5853 41.3125 41.4995 51.284 41.3151 63.6549C41.3122 63.8447 41.1586 64 40.9688 64C40.7789 64 40.6248 63.8445 40.627 63.6547C40.8155 47.1072 54.535 33.75 70.875 33.75Z" />
+                <path
+                    d="M57.1238 94.25C41.3325 94.25 27.9887 81.7744 26.9406 66.0003C26.8673 64.8982 27.7697 64 28.8743 64L39.3116 64C40.4161 64 41.3023 64.8985 41.3984 65.9989C42.4104 77.5926 52.1425 86.6875 63.9987 86.6875C76.4132 86.6875 86.4987 76.716 86.6832 64.3451C86.6861 64.1553 86.8397 64 87.0295 64C87.2194 64 87.3735 64.1555 87.3713 64.3453C87.1828 80.8928 73.4635 94.25 57.1238 94.25Z" />
                 <strong>Piperift</strong>
-                <svg class="nav-global-icon nav-global-icon-dropdown-toggle" height="100px" width="100px"
-                    viewBox="0 0 1000 1000">
-                    <path
-                        d="m 206.53824,376.41174 a 42,42 0 0 1 71,-29 l 221,220 220,-220 a 42,42 0 1 1 59,59 l -250,250 a 42,42 0 0 1 -59,0 l -250,-250 a 42,42 0 0 1 -12,-30 z" />
-                </svg>
-            </button>
+            </svg>
+        </a>
 
-            <ul class="nav-global-nav-links nav-global-dropdown js-dropdown-menu" id="nav-global-nav-links">
-                <li>
-                    <a href="https://code.piperift.com">Projects</a>
-                </li>
-                <li>
-                    <a href="https://riftlang.org">Docs</a>
-                </li>
-            </ul>
+        <button class="nav-global-logo js-dropdown-toggle" data-toggle-menu-id="nav-global-nav-links">
+            <svg fill-rule="nonzero" viewBox="8 8 112 112">
+                <path
+                    d="M64 9C94.3757 9 119 33.6243 119 64C119 94.3757 94.3757 119 64 119C33.6243 119 9 94.3757 9 64C9 33.6243 33.6243 9 64 9ZM68.5833 19.0794C43.9545 19.0794 23.865 38.1205 22.7969 61.9989C22.7475 63.1024 21.8568 64 20.7522 64C19.2202 64 17.6882 64 16.1562 64C15.0517 64 14.1514 64.8975 14.2025 66.0009C15.3023 89.7515 35.8712 108.686 60.1199 108.686C84.3684 108.686 104.148 89.7501 105.206 65.9998C105.255 64.8962 106.146 63.9986 107.25 63.9988L111.843 63.9996C112.948 63.9998 113.848 63.1022 113.8 61.9986C112.761 38.1203 93.212 19.0794 68.5833 19.0794Z" />
+                <path
+                    d="M70.875 33.75C86.6666 33.75 100.011 46.2256 101.059 61.9997C101.132 63.1018 100.23 64 99.125 64L88.6875 64C87.5829 64 86.6967 63.1015 86.6006 62.0011C85.5886 50.4074 75.8564 41.3125 64 41.3125C51.5853 41.3125 41.4995 51.284 41.3151 63.6549C41.3122 63.8447 41.1586 64 40.9688 64C40.7789 64 40.6248 63.8445 40.627 63.6547C40.8155 47.1072 54.535 33.75 70.875 33.75Z" />
+                <path
+                    d="M57.1238 94.25C41.3325 94.25 27.9887 81.7744 26.9406 66.0003C26.8673 64.8982 27.7697 64 28.8743 64L39.3116 64C40.4161 64 41.3023 64.8985 41.3984 65.9989C42.4104 77.5926 52.1425 86.6875 63.9987 86.6875C76.4132 86.6875 86.4987 76.716 86.6832 64.3451C86.6861 64.1553 86.8397 64 87.0295 64C87.2194 64 87.3735 64.1555 87.3713 64.3453C87.1828 80.8928 73.4635 94.25 57.1238 94.25Z" />
+            </svg>
+            <strong>Piperift</strong>
+            <svg class="nav-global-icon nav-global-icon-dropdown-toggle" height="100px" width="100px"
+                viewBox="0 0 1000 1000">
+                <path
+                    d="m 206.53824,376.41174 a 42,42 0 0 1 71,-29 l 221,220 220,-220 a 42,42 0 1 1 59,59 l -250,250 a 42,42 0 0 1 -59,0 l -250,-250 a 42,42 0 0 1 -12,-30 z" />
+            </svg>
+        </button>
 
-            <ul class="nav-global-links-right">
-                <li>
-                    <div class="nav-global-apps-dropdown-container">
-                        <button class="js-dropdown-toggle" data-toggle-menu-id="nav-global-apps-menu">
-                            <svg class="nav-global-icon" height="100px" width="100px" viewBox="0 0 1000 1000">
-                                <path
-                                    d="m 150.5,899 a 50,50 0 0 1 -49,-50 V 749 a 50,50 0 0 1 49,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m 299,0 a 50,50 0 0 1 -50,-50 V 749 a 50,50 0 0 1 50,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m 299,0 a 50,50 0 0 1 -50,-50 V 749 a 50,50 0 0 1 50,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m -598,-299 a 50,50 0 0 1 -49,-50 V 450 a 50,50 0 0 1 49,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m 299,0 a 50,50 0 0 1 -50,-50 V 450 a 50,50 0 0 1 50,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m 299,0 a 50,50 0 0 1 -50,-50 V 450 a 50,50 0 0 1 50,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m -598,-299 a 50,50 0 0 1 -49,-50 V 151 a 50,50 0 0 1 49,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m 299,0 a 50,50 0 0 1 -50,-50 V 151 a 50,50 0 0 1 50,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m 299,0 a 50,50 0 0 1 -50,-50 V 151 a 50,50 0 0 1 50,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z" />
-                            </svg>
-                        </button>
+        <ul class="nav-global-nav-links nav-global-dropdown js-dropdown-menu" id="nav-global-nav-links">
+            <li>
+                <a href="https://code.piperift.com">Projects</a>
+            </li>
+            <li>
+                <a href="https://riftlang.org">Docs</a>
+            </li>
+        </ul>
 
-                        <div class="nav-global-apps-menu nav-global-dropdown js-dropdown-menu"
-                            id="nav-global-apps-menu">
-                            <a href="https://riftlang.org" target="_blank">
-                                <h3>RIFT</h3>
+        <ul class="nav-global-links-right">
+            <li>
+                <div class="nav-global-apps-dropdown-container">
+                    <button class="js-dropdown-toggle" data-toggle-menu-id="nav-global-apps-menu">
+                        <svg class="nav-global-icon" height="100px" width="100px" viewBox="0 0 1000 1000">
+                            <path
+                                d="m 150.5,899 a 50,50 0 0 1 -49,-50 V 749 a 50,50 0 0 1 49,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m 299,0 a 50,50 0 0 1 -50,-50 V 749 a 50,50 0 0 1 50,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m 299,0 a 50,50 0 0 1 -50,-50 V 749 a 50,50 0 0 1 50,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m -598,-299 a 50,50 0 0 1 -49,-50 V 450 a 50,50 0 0 1 49,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m 299,0 a 50,50 0 0 1 -50,-50 V 450 a 50,50 0 0 1 50,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m 299,0 a 50,50 0 0 1 -50,-50 V 450 a 50,50 0 0 1 50,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m -598,-299 a 50,50 0 0 1 -49,-50 V 151 a 50,50 0 0 1 49,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m 299,0 a 50,50 0 0 1 -50,-50 V 151 a 50,50 0 0 1 50,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z m 299,0 a 50,50 0 0 1 -50,-50 V 151 a 50,50 0 0 1 50,-50 h 100 a 50,50 0 0 1 50,50 v 100 a 50,50 0 0 1 -50,50 z" />
+                        </svg>
+                    </button>
+
+                    <div class="nav-global-apps-menu nav-global-dropdown js-dropdown-menu" id="nav-global-apps-menu">
+                        <a href="https://riftlang.org">
+                            <h3>RIFT</h3>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="https://riftlang.org/">
+                                    <figure>
+                                        <svg class="nav-global-icon" height="100px" width="100px"
+                                            viewbox="0 0 1000 1000">
+                                            <path
+                                                d="m 49.15424,599.52895 a 50.360431,50.360431 0 0 0 -49.16137168,50.36043 v 200.24266 c 0,81.53594 68.34629768,149.88226 149.88223168,149.88226 h 700.2498 c 81.53593,0 149.8822,-68.34632 149.8822,-149.88226 V 649.88938 a 50.360431,50.360431 0 1 0 -100.72083,0 v 200.24266 c 0,27.57834 -21.58304,49.16138 -49.16137,49.16138 H 149.8751 c -27.57833,0 -49.16137,-21.58304 -49.16137,-49.16138 V 649.88938 A 50.360431,50.360431 0 0 0 49.15424,599.52895 Z M 249.3969,350.12491 a 50.360431,50.360431 0 0 0 -34.77267,85.13311 l 250.60309,249.40404 a 50.360431,50.360431 0 0 0 70.74442,0 L 785.37577,435.25802 A 50.360431,50.360431 0 1 0 714.63136,364.51361 L 500,579.14497 285.36864,364.51361 A 50.360431,50.360431 0 0 0 249.3969,350.12491 Z M 498.80094,0 A 50.360431,50.360431 0 0 0 449.63957,50.360432 V 649.88938 a 50.360431,50.360431 0 1 0 100.72086,0 V 50.360432 A 50.360431,50.360431 0 0 0 498.80094,0 Z"
+                                                style="stroke-width:1.19906"></path>
+                                        </svg>
+                                    </figure>
+                                    <div>
+                                        <h4>Download</h4>
+                                        <p>Get the latest Rift release, older versions, or experimental builds.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/PipeRift/rift/releases">
+                                    <div>
+                                        <h4>Change Log</h4>
+                                        <p>Stay up-to-date with the changes in the latest Rift releases.</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="https://riftlang.org/docs/quick-start/introduction/">
+                                    <div>
+                                        <h4>Learning & Resources</h4>
+                                        <p>Documentation on Rift's usage and features.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://riftlang.org/docs/reference/">
+                                    <div>
+                                        <h4>Documentation</h4>
+                                        <p>Guidelines, development documentation.</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <h3>UNREAL ENGINE PLUGINS</h3>
+                        <ul>
+                            <li>
+                                <a href="https://piperift.com/SaveExtension/">
+                                    <div>
+                                        <h4>Save Extension</h4>
+                                        <p>Flexible fully-featured save-game system</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://piperift.com/FactionsExtension/">
+                                    <div>
+                                        <h4>Factions Extension</h4>
+                                        <p>Adds customizable factions and relations</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul>
+                            <li>
+                                <a href="https://piperift.com/ActionsExtension/">
+                                    <div>
+                                        <h4>Actions Extension</h4>
+                                        <p>Blueprintable async tasks called actions.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://piperift.com/AttributesExtension/">
+                                    <div>
+                                        <h4>Attributes Extension</h4>
+                                        <p>Intuitive, easy and flexible attribute system</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="nav-global-apps-menu-section-donate">
+                            <a href="https://github.com/sponsors/muit">
+                                <h3>DONATE</h3>
                             </a>
                             <ul>
                                 <li>
-                                    <a href="https://riftlang.org/" target="_blank">
+                                    <a href="https://github.com/sponsors/muit?frequency=recurring">
                                         <figure>
                                             <svg class="nav-global-icon" height="100px" width="100px"
                                                 viewbox="0 0 1000 1000">
                                                 <path
-                                                    d="m 49.15424,599.52895 a 50.360431,50.360431 0 0 0 -49.16137168,50.36043 v 200.24266 c 0,81.53594 68.34629768,149.88226 149.88223168,149.88226 h 700.2498 c 81.53593,0 149.8822,-68.34632 149.8822,-149.88226 V 649.88938 a 50.360431,50.360431 0 1 0 -100.72083,0 v 200.24266 c 0,27.57834 -21.58304,49.16138 -49.16137,49.16138 H 149.8751 c -27.57833,0 -49.16137,-21.58304 -49.16137,-49.16138 V 649.88938 A 50.360431,50.360431 0 0 0 49.15424,599.52895 Z M 249.3969,350.12491 a 50.360431,50.360431 0 0 0 -34.77267,85.13311 l 250.60309,249.40404 a 50.360431,50.360431 0 0 0 70.74442,0 L 785.37577,435.25802 A 50.360431,50.360431 0 1 0 714.63136,364.51361 L 500,579.14497 285.36864,364.51361 A 50.360431,50.360431 0 0 0 249.3969,350.12491 Z M 498.80094,0 A 50.360431,50.360431 0 0 0 449.63957,50.360432 V 649.88938 a 50.360431,50.360431 0 1 0 100.72086,0 V 50.360432 A 50.360431,50.360431 0 0 0 498.80094,0 Z"
-                                                    style="stroke-width:1.19906"></path>
+                                                    d="M 273.67169,58.416076 C 201.59785,62.59427 135.79129,94.975269 86.697523,145.11359 37.603742,194.20736 4.1781939,260.01391 0,332.08775 -4.1781926,403.11704 22.980065,480.41362 86.697523,545.17562 l 45.960127,45.96013 339.47823,338.43367 a 43.871033,43.871033 0 0 0 61.62835,0 L 872.1979,591.13575 918.15804,545.17562 c 109.67766,-110.72213 109.67766,-290.38445 0,-400.06203 -110.72213,-110.722127 -290.38445,-110.722127 -400.06204,0 l -15.66822,14.62368 -15.66822,-14.62368 C 423.04211,80.351592 345.74553,53.193334 273.67169,58.416076 Z m 5.22274,86.697514 c 48.04922,-3.13365 98.18754,12.53458 146.23677,60.5838 l 47.00468,47.00468 a 43.871033,43.871033 0 0 0 61.62835,0 l 45.96013,-47.00468 c 76.25204,-76.25203 199.50874,-76.25203 276.80532,0 77.29658,77.29658 77.29658,200.5533 0,277.84988 L 810.56956,529.50739 502.42778,837.64917 194.286,529.50739 148.32588,483.54727 C 100.27665,434.45349 84.608431,384.31516 86.697523,336.26594 c 3.133646,-47.00467 26.113717,-95.0539 61.628357,-130.56855 35.51464,-35.51464 82.51932,-58.49471 130.56855,-60.5838 z"
+                                                    style="stroke-width:1.04455"></path>
                                             </svg>
                                         </figure>
                                         <div>
-                                            <h4>Download</h4>
-                                            <p>Get the latest Rift release, older versions, or experimental builds.</p>
+                                            <h4>Development Fund</h4>
+                                            <p>Support open development with a monthly contribution.</p>
                                         </div>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="https://www.blender.org/download/releases/?utm_medium=nav-global"
-                                        target="_blank">
+                                    <a href="https://github.com/sponsors/muit?frequency=one-time">
                                         <div>
-                                            <h4>Change Log</h4>
-                                            <p>Stay up-to-date with the changes in the latest Rift releases.</p>
+                                            <h4>One-time Donations</h4>
+                                            <p>Perform a single donation.</p>
                                         </div>
                                     </a>
                                 </li>
                             </ul>
-                            <ul>
-                                <li>
-                                    <a href="https://riftlang.org/docs/quick-start/introduction/" target="_blank">
-                                        <div>
-                                            <h4>Learning & Resources</h4>
-                                            <p>Documentation on Rift's usage and features.</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://riftlang.org/docs/reference/" target="_blank">
-                                        <div>
-                                            <h4>Documentation</h4>
-                                            <p>Guidelines, development documentation.</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <h3>UNREAL ENGINE PLUGINS</h3>
-                            <ul>
-                                <li>
-                                    <a href="https://piperift.com/SaveExtension/" target="_blank">
-                                        <div>
-                                            <h4>Save Extension</h4>
-                                            <p>Flexible fully-featured save-game system</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://piperift.com/FactionsExtension/" target="_blank">
-                                        <div>
-                                            <h4>Factions Extension</h4>
-                                            <p>Adds customizable factions and relations</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li>
-                                    <a href="https://piperift.com/ActionsExtension/" target="_blank">
-                                        <div>
-                                            <h4>Actions Extension</h4>
-                                            <p>Blueprintable async tasks called actions.</p>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="https://piperift.com/AttributesExtension/" target="_blank">
-                                        <div>
-                                            <h4>Attributes Extension</h4>
-                                            <p>Intuitive, easy and flexible attribute system</p>
-                                        </div>
-                                    </a>
-                                </li>
-                            </ul>
-                            <div class="nav-global-apps-menu-section-donate">
-                                <a href="https://github.com/sponsors/muit" target="_blank">
-                                    <h3>DONATE</h3>
-                                </a>
-                                <ul>
-                                    <li>
-                                        <a href="https://github.com/sponsors/muit?frequency=recurring" target="_blank">
-                                            <figure>
-                                                <svg class="nav-global-icon" height="100px" width="100px"
-                                                    viewbox="0 0 1000 1000">
-                                                    <path
-                                                        d="M 273.67169,58.416076 C 201.59785,62.59427 135.79129,94.975269 86.697523,145.11359 37.603742,194.20736 4.1781939,260.01391 0,332.08775 -4.1781926,403.11704 22.980065,480.41362 86.697523,545.17562 l 45.960127,45.96013 339.47823,338.43367 a 43.871033,43.871033 0 0 0 61.62835,0 L 872.1979,591.13575 918.15804,545.17562 c 109.67766,-110.72213 109.67766,-290.38445 0,-400.06203 -110.72213,-110.722127 -290.38445,-110.722127 -400.06204,0 l -15.66822,14.62368 -15.66822,-14.62368 C 423.04211,80.351592 345.74553,53.193334 273.67169,58.416076 Z m 5.22274,86.697514 c 48.04922,-3.13365 98.18754,12.53458 146.23677,60.5838 l 47.00468,47.00468 a 43.871033,43.871033 0 0 0 61.62835,0 l 45.96013,-47.00468 c 76.25204,-76.25203 199.50874,-76.25203 276.80532,0 77.29658,77.29658 77.29658,200.5533 0,277.84988 L 810.56956,529.50739 502.42778,837.64917 194.286,529.50739 148.32588,483.54727 C 100.27665,434.45349 84.608431,384.31516 86.697523,336.26594 c 3.133646,-47.00467 26.113717,-95.0539 61.628357,-130.56855 35.51464,-35.51464 82.51932,-58.49471 130.56855,-60.5838 z"
-                                                        style="stroke-width:1.04455"></path>
-                                                </svg>
-                                            </figure>
-                                            <div>
-                                                <h4>Development Fund</h4>
-                                                <p>Support open development with a monthly contribution.</p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="https://github.com/sponsors/muit?frequency=one-time" target="_blank">
-                                            <div>
-                                                <h4>One-time Donations</h4>
-                                                <p>Perform a single donation.</p>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </div>
-
                     </div>
-                </li>
-            </ul>
-        </nav>
+                </div>
+            </li>
+        </ul>
     </div>
 </div>

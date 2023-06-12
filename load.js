@@ -57,7 +57,7 @@ function setupNavBar() {
     // Mark items as active
     if (location.pathname != null) {
         var items = [];
-        items.push(...document.querySelectorAll('.nav-global nav>ul>li>a'));
+        items.push(...document.querySelectorAll('.nav-global .nav-global-container>ul>li>a'));
         items.push(...document.querySelectorAll('.nav-global .nav-global-apps-menu ul>li>a'));
         for (var i = 0, len = items.length; i < len; i++) {
             var linkUrl = items[i].getAttribute("href");
