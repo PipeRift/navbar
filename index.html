@@ -15,8 +15,8 @@
         --nav-global-color-text-hover: white;
         --nav-global-color-text-active: white;
 
-        --nav-global-color-primary: hsl(204, 98%, 54%);
-        --nav-global-color-primary-bg: hsla(204, 100%, 46%, .1);
+        --nav-global-color-primary: hsl(80, 98%, 54%);
+        --nav-global-color-primary-bg: hsla(80, 100%, 46%, .1);
 
         --nav-global-color-button-bg-hover: hsl(213, 10%, 24%);
         --nav-global-color-button-text: var(--nav-global-color-text);
@@ -115,7 +115,7 @@
 
     /* Links. */
     .nav-global a:not(.dropdown-item) {
-        color: inherit;
+        color: inherit !important;
         cursor: pointer;
         text-decoration: none;
         transition: background-color var(--nav-global-transition-speed) ease-out, color var(--nav-global-transition-speed) ease-out;
@@ -157,6 +157,7 @@
         color: var(--nav-global-color-text-active) !important;
         fill: var(--nav-global-color-text-active);
         font-variation-settings: 'wght' 500;
+        font-weight: 500;
     }
 
     .nav-global .nav-global-links-right {
