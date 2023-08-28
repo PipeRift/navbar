@@ -132,9 +132,9 @@
         padding: 0;
     }
 
-    .nav-global nav>ul,
-    .nav-global nav>ul>li,
-    .nav-global nav>ul>li>a,
+    .nav-global .nav-global-container>ul,
+    .nav-global .nav-global-container>ul>li,
+    .nav-global .nav-global-container>ul>li>a,
     .nav-global-apps-dropdown-container {
         align-items: center;
         display: inline-flex;
@@ -264,7 +264,7 @@
     }
 
     /* Apps dropdown menu. */
-    .nav-global .nav-global-apps-menu {
+    .nav-global .nav-global-container .nav-global-apps-menu {
         background-color: var(--nav-global-color-menu-bg);
         border-radius: var(--nav-global-border-radius-lg);
         border: thin solid var(--nav-global-color-menu-border);
@@ -279,7 +279,7 @@
         z-index: var(--nav-global-color-menu-zindex);
     }
 
-    .nav-global .nav-global-dropdown.is-visible {
+    .nav-global .nav-global-container .nav-global-dropdown.is-visible {
         display: block;
         visibility: visible;
     }
